@@ -11,15 +11,10 @@ export default defineConfig({
         splitVendorChunkPlugin(),
     ],
     build: {
-        chunkSizeWarningLimit: 1500,
+        chunkSizeWarningLimit: 1500
     },
     server: {
-        proxy: {
-            "/api": {
-                target: "http://localhost:3000",
-                changeOrigin: true,
-            },
-        },
+        port: 3100
     },
     resolve: {
         alias: {

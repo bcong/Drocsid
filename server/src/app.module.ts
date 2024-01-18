@@ -1,17 +1,14 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AccountModule } from './account/account.module';
 import { Account } from './account/entities/account.entity';
 import { LoggerMiddleware } from './middleware/loggermiddleware';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
     imports: [
-        ServeStaticModule.forRoot({
-            rootPath: join(__dirname, '../..', 'client', 'dist'),
-        }),
         ConfigModule.forRoot({
             envFilePath: ['.env']
         }),
@@ -27,14 +24,14 @@ import { LoggerMiddleware } from './middleware/loggermiddleware';
         }),
         AccountModule,
     ],
-    controllers: [],
-    providers: [],
+    controllers: [AppController],
+    providers: [AppService],
 })
 
 export class AppModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
         consumer
             .apply(LoggerMiddleware)
-            .forRoutes('account')
+            .forRoutes('', 'account')
     }
 }
