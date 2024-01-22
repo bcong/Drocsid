@@ -14,11 +14,16 @@ export default defineConfig({
         chunkSizeWarningLimit: 1500
     },
     server: {
-        port: 3100
+        port: 5100
     },
     resolve: {
         alias: {
             "@Assets": path.resolve(__dirname, "src/Assets"),
+            "@Types": path.resolve(__dirname, "src/@types"),
+            "@Views": path.resolve(__dirname, "src/Views"),
+            "@Templates": path.resolve(__dirname, "src/Templates"),
+            "@Utils": path.resolve(__dirname, "src/Utils"),
+            "@Components": path.resolve(__dirname, "src/Components"),
             "@Stores": path.resolve(__dirname, "src/Stores"),
         },
     },

@@ -13,6 +13,21 @@
             "@Assets/*": [
                 "src/Assets/*"
             ],
+            "@Types/*": [
+                "src/@types/*"
+            ],
+            "@Views/*": [
+                "src/Views/*"
+            ],
+            "@Templates/*": [
+                "src/Templates/*"
+            ],
+            "@Utils/*": [
+                "src/Utils/*"
+            ],
+            "@Components/*": [
+                "src/Components/*"
+            ],
             "@Stores/*": [
                 "src/Stores/*"
             ],
