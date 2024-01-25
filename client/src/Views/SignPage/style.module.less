@@ -1,0 +1,122 @@
+.SignPage {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    background-color: hsla(var(--blurple));
+
+    .Wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        min-width: 480px;
+        height: 100%;
+
+        .SignForm {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+
+            width: 100%;
+            padding: 32px;
+            border-radius: 6px;
+            background-color: hsla(var(--black-5));
+            box-shadow: var(--legacy-elevation-high);
+            opacity: 0;
+
+            &.View {
+                animation: View_Anim .3s .2s ease forwards;
+                z-index: 1;
+            }
+
+            &.Hide {
+                animation: Hide_Anim .3s ease forwards;
+                z-index: 0;
+            }
+
+            @keyframes View_Anim {
+                0% {
+                    opacity: 0;
+                    transform: translate(0, -20%) scale(1.2);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: translate(0, 3%)
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translate(0, 0%) scale(1);
+                }
+            }
+
+            @keyframes Hide_Anim {
+                0% {
+                    opacity: 1;
+                    transform: translate(0, 0%) scale(1);
+                }
+
+                50% {
+                    transform: scale(1.25);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: translate(0, -10%) scale(1.5);
+                }
+            }
+
+            .Section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                flex: 1;
+
+                .Header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    margin-bottom: 24px;
+
+                    p {
+                        &:not(:last-child) {
+                            margin-bottom: 8px;
+                        }
+
+                        &.Big {
+                            font-size: 26px;
+                            font-weight: 600;
+                            color: hsla(var(--white-1));
+                        }
+
+                        &.Small {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: hsla(var(--white-4));
+                        }
+                    }
+                }
+
+                .Contents {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 18px;
+
+                    .Selects {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-end;
+
+                        gap: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+.Tips {
+    display: flex;
+    flex-direction: row;
+    gap: var(--tips-gap);
+
+    .Tip {
+        margin-top: var(--tip-margin);
+
+        p {
+            color: hsla(var(--white-4));
+        }
+
+        &.Button {
+            p {
+                cursor: pointer;
+                color: hsla(var(--tip-button-1));
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

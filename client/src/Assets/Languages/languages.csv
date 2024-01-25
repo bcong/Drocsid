@@ -1,0 +1,44 @@
+﻿KEY,KO,EN
+
+# 단어
+MONDAY,월요일,Monday
+TUESDAY,화요일,Tuesday
+WEDNESDAY,수요일,Wednesday
+THURSDAY,목요일,Thursday
+FRIDAY,금요일,Friday
+SATURDAY,토요일,Saturday
+SUNDAY,일요일,Sunday
+AM,오전,AM
+PM,오후,PM
+EXIT,종료,Exit
+START,시작,Start
+CANCLE,취소,Cancle
+LANGUAGE,언어,Language
+CONFIRM,확인,Confirm
+SAVE,저장,Save
+HOUR,시간,Hour
+MINUTE,분,Minute
+SECOND,초,Second
+RESET,초기화,Reset
+SETTING,설정,Setting
+EMAIL,이메일,EMAIL
+PASSWORD,비밀번호,PASSWORD
+LOGIN,로그인,Login
+REGISTER,가입하기,Register
+CREATE_ACCOUNT,계정 만들기,Create an account
+USERNAME,사용자명,USERNAME
+DATE_BIRTH,생년월일,DATE OF BIRTH
+YEAR,년,Year
+MONTH,월,Month
+DAY,일,Day
+CONTINUE,계속하기,Continue
+
+# 문장
+SIGNPAGE_HEADER_TITLE,돌아오신 것을 환영해요!,Welcome back!
+SIGNPAGE_HEADER_SUBTITLE,다시 만나다니 너무 반가워요!,We're so excited to see you again!
+SIGNPAGE_FORGOT_PASSWORD,비밀번호를 잊으셨나요?,Forgot your password?
+SIGNPAGE_NEED_ACCOUNT,계정이 필요하신가요?,Need an account?
+SIGNPAGE_ALREADY_ACCOUNT,이미 계정이 있으신가요?,Already have an account?
+SELECT_NO_SEARCH_RESULTS,검색 결과가 없어요.,No search results.
+
+# END

@@ -1,13 +1,17 @@
-import { observer } from "mobx-react-lite";
-import React, { } from "react";
+import { useMainStore } from './Stores/index';
+import SignPage from "@Views/SignPage";
 
-const App = observer(() => {
+const App = () => {
+    const mainStore = useMainStore();
 
-    return (
-        <div>
-            <p>React 테스트</p>
-        </div>
-    );
-});
+    let viewPageElem;
+    switch (mainStore.view) {
+        case "":
+            viewPageElem = <SignPage />;
+            break;
+    }
+
+    return viewPageElem;
+};
 
 export default App;
