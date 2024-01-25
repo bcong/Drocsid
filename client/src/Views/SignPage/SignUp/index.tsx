@@ -25,6 +25,14 @@ const SignUp: React.FC<I_Props> = ({
         month: "",
         day: "",
     });
+    const [singUpInfoState, setSingUpInfoState] = useState({
+        email: "",
+        username: "",
+        password: "",
+        year: "",
+        month: "",
+        day: "",
+    });
 
     const currentYear = new Date().getFullYear();
     const yearOptions = Array.from({ length: 150 }, (_, index) => {
@@ -59,6 +67,12 @@ const SignUp: React.FC<I_Props> = ({
         setSignUpInfo({ ...signUpInfo, day: day });
     };
 
+    const handleSingUp = () => {
+        for (const info of singUpInfoState) {
+            console.log(info)
+        }
+    };
+
     return (
         <div className={classes(styles.SignForm, viewSignUp == null ? null : viewSignUp ? styles.View : styles.Hide)}>
             <div className={styles.Section}>
@@ -74,7 +88,7 @@ const SignUp: React.FC<I_Props> = ({
                         <Select required={true} placeholder={"MONTH"} value={signUpInfo.month} options={monthOptions} onChange={setMonth} />
                         <Select required={true} placeholder={"DAY"} value={signUpInfo.day} options={dayOptions} onChange={setDay} />
                     </div>
-                    <Button text={"CONTINUE"} />
+                    <Button text={"CONTINUE"} onClick={handleSingUp} />
                     <Tip tips={[{ tip: "SIGNPAGE_ALREADY_ACCOUNT", size: 16, bold: true, cb: () => IsViewSignUp(false) }]} />
                 </div>
             </div>

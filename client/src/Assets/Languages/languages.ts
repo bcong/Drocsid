@@ -36,6 +36,7 @@ export type LanguageKey =
     | "MONTH"
     | "DAY"
     | "CONTINUE"
+    | "REQUIREMENTS"
 
     // 문장
     | "SIGNPAGE_HEADER_TITLE"

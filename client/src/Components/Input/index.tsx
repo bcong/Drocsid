@@ -28,7 +28,12 @@ const Input: React.FC<I_Props> = ({
     return (
         <div className={styles.InputBox}>
             {label && <Label label={label} required={required} />}
-            <input value={value} placeholder={placeholder && mainStore.translate(placeholder)} type={type} onChange={(e) => onChange && onChange(e.target.value)} />
+            <input
+                value={value}
+                placeholder={placeholder && mainStore.translate(placeholder)}
+                type={type}
+                onChange={(e) => onChange && onChange(e.target.value)}
+            />
             {tips && <Tip tips={tips} />}
         </div>
     );

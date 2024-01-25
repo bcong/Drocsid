@@ -32,6 +32,7 @@ YEAR,년,Year
 MONTH,월,Month
 DAY,일,Day
 CONTINUE,계속하기,Continue
+REQUIREMENTS,필수 요건,Requirements
 
 # 문장
 SIGNPAGE_HEADER_TITLE,돌아오신 것을 환영해요!,Welcome back!
