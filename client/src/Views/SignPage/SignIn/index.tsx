@@ -4,6 +4,7 @@ import { useMainStore } from "@Stores/index";
 import Button from "@Components/Button";
 import Input from "@Components/Input";
 import { classes } from "@Utils/index";
+import Label from "@Components/Label";
 
 interface I_Props {
     viewSignUp: null | boolean
@@ -40,8 +41,11 @@ const SignIn: React.FC<I_Props> = ({
                     <p className={styles.Small}>{mainStore.translate("SIGNPAGE_HEADER_SUBTITLE")}</p>
                 </div>
                 <div className={styles.Contents}>
-                    <Input type={"email"} label={"EMAIL"} value={signInInfo.email} required={true} onChange={setEmail} />
-                    <Input type={"password"} label={"PASSWORD"} value={signInInfo.password} tips={[{ tip: "SIGNPAGE_FORGOT_PASSWORD", cb: resetPassword }]} required={true} onChange={setPassword} />
+                    <Label label={"EMAIL"} required={true} marginBottom={6} />
+                    <Input type={"email"} value={signInInfo.email} onChange={setEmail} marginBottom={20} />
+
+                    <Label label={"PASSWORD"} required={true} marginBottom={6} />
+                    <Input type={"password"} value={signInInfo.password} marginBottom={20} tips={[{ tip: "SIGNPAGE_FORGOT_PASSWORD", cb: resetPassword }]} onChange={setPassword} />
                     <Button text={"LOGIN"} tips={[{ tip: "SIGNPAGE_NEED_ACCOUNT" }, { tip: "REGISTER", cb: () => IsViewSignUp(true) }]} />
                 </div>
             </div>

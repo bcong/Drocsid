@@ -25,8 +25,8 @@ export default class MainStore {
     };
 
     @action
-    translate = (key: LanguageKey) => {
-        return this._languages.getTranslationKey(key);
+    translate = (key: LanguageKey, options?: number[] | string[]) => {
+        return this._languages.getTranslationKey(key, options);
     };
 
     @computed
