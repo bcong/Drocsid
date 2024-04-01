@@ -51,7 +51,7 @@ const SignUp: React.FC<I_Props> = ({
         deleteSignUpInfoState(key);
     };
 
-    const handleSingUp = () => {
+    const handleSingUp = async () => {
         if (isSigningUp) return;
 
         const signUpInfoState = new Map();
@@ -104,6 +104,21 @@ const SignUp: React.FC<I_Props> = ({
 
         if (signUpInfoState.size == 0) {
             IsSigningUp(true);
+
+            const IP = location.hostname;
+            const url = new URL(`http://${IP}:5000/account/signup`);
+            const data = { email: 'example' };
+
+            await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch((error) => console.error('Error:', error));
         }
     };
 

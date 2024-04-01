@@ -33,6 +33,10 @@ const SignIn: React.FC<I_Props> = ({
         console.log("resetPassword");
     };
 
+    const handleSignIn = () => {
+
+    };
+
     return (
         <div className={classes(styles.SignForm, viewSignUp ? styles.Hide : styles.View)}>
             <div className={styles.Section}>
@@ -46,7 +50,7 @@ const SignIn: React.FC<I_Props> = ({
 
                     <Label label={"PASSWORD"} required={true} marginBottom={6} />
                     <Input type={"password"} value={signInInfo.password} marginBottom={20} tips={[{ tip: "SIGNPAGE_FORGOT_PASSWORD", cb: resetPassword }]} onChange={setPassword} />
-                    <Button text={"LOGIN"} tips={[{ tip: "SIGNPAGE_NEED_ACCOUNT" }, { tip: "REGISTER", cb: () => IsViewSignUp(true) }]} />
+                    <Button text={"LOGIN"} onClick={() => handleSignIn()} tips={[{ tip: "SIGNPAGE_NEED_ACCOUNT" }, { tip: "REGISTER", cb: () => IsViewSignUp(true) }]} />
                 </div>
             </div>
         </div>
