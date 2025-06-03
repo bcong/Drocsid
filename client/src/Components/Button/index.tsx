@@ -6,9 +6,12 @@ import Label from "@Components/Label";
 
 interface I_Props {
     label?: LanguageKey
-    text: LanguageKey
+    text: LanguageKey | JSX.Element
     required?: boolean
     tips?: { tip: LanguageKey, cb?: () => void }[]
+    marginTop?: number
+    marginBottom?: number
+    disabled?: boolean
     onClick?: () => void
 }
 
@@ -17,17 +20,20 @@ const Button: React.FC<I_Props> = ({
     text,
     required,
     tips,
+    marginTop,
+    marginBottom,
+    disabled,
     onClick
 }) => {
     const mainStore = useMainStore();
 
     return (
-        <div className={styles.ButtonBox}>
+        <div className={styles.ButtonBox} style={{ marginTop: marginTop, marginBottom: marginBottom }}>
             {label && <Label label={label} required={required} />}
-            <button onClick={onClick}>
-                <p>{mainStore.translate(text)}</p>
+            <button className={disabled ? styles.Disabled : undefined} onClick={onClick}>
+                <p>{typeof text == "string" ? mainStore.translate(text) : text}</p>
             </button>
-            {tips && <Tip tips={tips} />}
+            {tips && <Tip tips={tips} marginTop={8} />}
         </div>
     );
 };

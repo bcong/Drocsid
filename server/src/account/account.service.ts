@@ -19,6 +19,8 @@ export class AccountService {
         const { email } = newAccount;
         const userFind: Account = await this.accountRepository.findOne({ where: { email } })
 
+        console.log(newAccount)
+
         if (userFind) {
             throw new HttpException({
                 errorCode: "ALREADY_EMAIL_USE"

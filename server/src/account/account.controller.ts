@@ -9,6 +9,7 @@ export class AccountController {
 
     @Post("signup")
     async singup(@Res() res: Response, @Body() account: Account) {
+        console.log(account)
         return await this.accountService.signup(res, account);
     }
 }

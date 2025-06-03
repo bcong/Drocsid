@@ -1,11 +1,9 @@
 .Tips {
     display: flex;
     flex-direction: row;
-    gap: var(--tips-gap);
+    gap: 6px;
 
     .Tip {
-        margin-top: var(--tip-margin);
-
         p {
             color: hsla(var(--white-4));
         }
@@ -18,6 +16,43 @@
                 &:hover {
                     text-decoration: underline;
                 }
+            }
+        }
+    }
+
+    &.Animation {
+        margin-bottom: -16px;
+        opacity: 0;
+
+        &.View {
+            animation: Tips_View .5s ease forwards;
+        }
+
+        &.Hide {
+            animation: Tips_Hide .5s ease forwards;
+        }
+
+        @keyframes Tips_View {
+            0% {
+                margin-bottom: -16px;
+                opacity: 0;
+            }
+
+            100% {
+                margin-bottom: 0px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes Tips_Hide {
+            0% {
+                margin-bottom: 0px;
+                opacity: 1;
+            }
+
+            100% {
+                margin-bottom: -16px;
+                opacity: 0;
             }
         }
     }

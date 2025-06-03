@@ -2,24 +2,25 @@ import styles from "./style.module.less";
 import { useMainStore } from "@Stores/index";
 import { LanguageKey } from "@Assets/Languages/languages";
 import { classes } from "@Utils/index";
-import Label from "@Components/Label";
 import { useEffect, useRef, useState } from "react";
 
 interface I_Props {
-    label?: LanguageKey
-    required?: boolean
     value: string | number
     options: { id: number, label: string | number }[]
     placeholder?: LanguageKey
+    marginTop?: number
+    marginBottom?: number
+    disabled?: boolean
     onChange: (value: string) => void
 }
 
 const Select: React.FC<I_Props> = ({
-    label,
-    required,
     value,
     options,
     placeholder,
+    marginTop,
+    marginBottom,
+    disabled,
     onChange
 }) => {
     const mainStore = useMainStore();
@@ -61,6 +62,8 @@ const Select: React.FC<I_Props> = ({
     }, []);
 
     const handleIconMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (disabled) return;
+
         event.preventDefault();
         const input = inputRef.current;
         if (input) document.activeElement === input ? input.blur() : input.focus();
@@ -106,10 +109,10 @@ const Select: React.FC<I_Props> = ({
     const translatedPlaceholder = value ? String(value) : placeholder && mainStore.translate(placeholder);
 
     return (
-        <div className={styles.SelectBox}>
-            {label && <Label label={label} required={required} />}
+        <div className={styles.SelectBox} style={{ marginTop: marginTop, marginBottom: marginBottom }}>
             <div className={styles.Select}>
                 <input ref={inputRef}
+                    disabled={disabled}
                     placeholder={translatedPlaceholder}
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}

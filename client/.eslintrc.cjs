@@ -12,6 +12,7 @@ module.exports = {
   rules: {
       'react-refresh/only-export-components': 'warn',
       "@typescript-eslint/no-explicit-any": "warn",
+      'no-useless-escape': 'off',
       "semi": [1, "always"]
   },
 }
