@@ -25,7 +25,7 @@ const SignUp: React.FC<I_Props> = ({
         month: "",
         day: "",
     });
-    const [singUpInfoState, setSingUpInfoState] = useState({
+    const [singUpInfoVaild, setSingUpInfoVaild] = useState({
         email: "",
         username: "",
         password: "",
@@ -68,9 +68,7 @@ const SignUp: React.FC<I_Props> = ({
     };
 
     const handleSingUp = () => {
-        for (const info of singUpInfoState) {
-            console.log(info)
-        }
+
     };
 
     return (
